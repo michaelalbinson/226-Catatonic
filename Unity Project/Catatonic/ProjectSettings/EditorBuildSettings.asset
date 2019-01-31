@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 377697eb91010d646a5b20762b50a3ca
+  - enabled: 1
+    path: Assets/Scenes/Bathroom.unity
+    guid: c85788df5e5a4f347ba750ea9d081dc5
+  - enabled: 1
+    path: Assets/Scenes/Dream 1.unity
+    guid: 3d3f81c935a545f48b035413b88f4497
   m_configObjects: {}

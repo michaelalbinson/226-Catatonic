@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 
 public class Cat : MonoBehaviour
@@ -107,4 +108,8 @@ public class Cat : MonoBehaviour
 		
 	}
 
+	public bool getAsleep()
+	{
+		return asleep;
+	}
 }
