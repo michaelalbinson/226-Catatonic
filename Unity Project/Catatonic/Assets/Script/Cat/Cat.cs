@@ -16,8 +16,12 @@ public class Cat : MonoBehaviour
 	private float bounds;
 
 	private float catScale = 0.5f;
-	private float boundRight = 9.6f;
-	private float boundLeft = -9.6f;
+	public float boundRight = 9.6f;
+	public float boundLeft = -9.6f;
+
+	//skill booleans
+	private static bool unlockBackflip = false;
+	private bool unlockFront = false;
 
     void Start()
     {
@@ -29,7 +33,22 @@ public class Cat : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
+		Skills();
+		unlockBackflip = SkillTracker.getBackflip();
+		if (unlockBackflip) {
+			unlockFront = true;
+		}
     }
+
+	void Skills(){
+		if (Input.GetKey("o")){	
+			if (unlockBackflip && grounded) {
+				grounded = false;
+				myBody.AddForce(new Vector2(transform.position.x, jumpForce));
+				anim.SetBool("Backflip", true);
+			}
+		}
+	}
 
 	void Movement(){
 		float h = Input.GetAxisRaw("Horizontal"); //get either left or right from arrow keys/keyboard
@@ -104,6 +123,7 @@ public class Cat : MonoBehaviour
 		if(target.gameObject.tag == "Ground") {
 			grounded = true;
 			anim.SetBool("Jump", false);
+			anim.SetBool("Backflip", false);
 		}
 		
 	}
@@ -112,4 +132,23 @@ public class Cat : MonoBehaviour
 	{
 		return asleep;
 	}
+
+	public bool getUnlock(string item){
+		if (item == "Front"){
+			return unlockFront;
+		}
+		return false;
+	}
+
+	/*
+	public void setUnlock(bool x, string item) {
+		if (item == "Backflip"){
+			unlockBackflip = x;
+		}
+		else if (item == "Front"){
+			unlockFront = x;
+		}
+		
+	}
+	*/
 }
