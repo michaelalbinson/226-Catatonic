@@ -14,6 +14,7 @@ public class LevelControl : MonoBehaviour
 	public Text temp; //temp
 	public bool sleepSpot;
 	public bool roomChange;
+	public bool roomChangeLocked;
 	public bool skillUnlock;
 	public bool wakeUp;
 	public string skillSend;
@@ -37,12 +38,13 @@ public class LevelControl : MonoBehaviour
 				}
 			}
 
-			else if (roomChange) {
+			else if (roomChange || roomChangeLocked) {
+				//Debug.Log("Room change trigger");
 				if (Input.GetKey("p")){
-					if (toLevel == 2){
+					if (roomChange){
 						SceneManager.LoadScene(toLevel);
 					}
-					else if (toLevel == 3){
+					else if (roomChangeLocked){
 						if (player.getUnlock("Front")){
 							SceneManager.LoadScene(toLevel);
 						}

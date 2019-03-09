@@ -420,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915532086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.31, y: -2.39, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -557,7 +557,9 @@ MonoBehaviour:
   temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 1
+  roomChangeLocked: 0
   skillUnlock: 0
+  wakeUp: 0
   skillSend: 
 --- !u!61 &1134390870
 BoxCollider2D:
@@ -617,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1498504609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -676,7 +678,9 @@ MonoBehaviour:
   temp: {fileID: 0}
   sleepSpot: 1
   roomChange: 0
+  roomChangeLocked: 0
   skillUnlock: 0
+  wakeUp: 0
   skillSend: 
 --- !u!114 &1498504612
 MonoBehaviour:
