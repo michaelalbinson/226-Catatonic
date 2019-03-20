@@ -161,6 +161,7 @@ MonoBehaviour:
   temp: {fileID: 0}
   sleepSpot: 1
   roomChange: 0
+  roomChangeLocked: 0
   skillUnlock: 0
   wakeUp: 0
   skillSend: 
@@ -359,6 +360,7 @@ MonoBehaviour:
   temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 1
+  roomChangeLocked: 0
   skillUnlock: 0
   wakeUp: 0
   skillSend: 

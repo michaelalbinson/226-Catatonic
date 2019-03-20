@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Word Minigame.unity
     guid: 2b4797db62cb98b4e89f16ac24108349
+  - enabled: 1
+    path: Assets/Scenes/Platformer Minigame.unity
+    guid: 673338d1639f51f4592487f2dfe8e903
   m_configObjects: {}

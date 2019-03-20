@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Sleep Spot
+  - Death Zone
+  - Speed Increase
   layers:
   - Default
   - TransparentFX
