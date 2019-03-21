@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Monk : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Monk : MonoBehaviour
     void FixedUpdate()
     { 
         Movement();
+        IsInValidSpace();
     }
 
 	void Movement(){
@@ -57,6 +59,20 @@ public class Monk : MonoBehaviour
         else
         {
             anim.SetBool("run", false);
+        }
+    }
+
+    void IsInValidSpace()
+    {
+        // reload the scene if we get below the bottom of the scene
+        if (transform.position.y < -20)
+        {
+            SceneManager.LoadScene("Jailbreak");
+        }
+
+        if (transform.position.x > 100)
+        {
+            SceneManager.LoadScene("Caged");
         }
     }
 
