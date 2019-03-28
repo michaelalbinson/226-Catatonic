@@ -8,6 +8,9 @@ TagManager:
   - Sleep Spot
   - Death Zone
   - Speed Increase
+  - Cat Bone
+  - Enemy
+  - Dog Bone
   layers:
   - Default
   - TransparentFX

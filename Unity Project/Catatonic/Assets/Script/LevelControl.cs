@@ -10,7 +10,7 @@ public class LevelControl : MonoBehaviour
 	
 	public Cat player;
 	public Collider2D cd;
-	public int toLevel;
+	public string toLevel;
 	public Text temp; //temp
 	public bool sleepSpot;
 	public bool roomChange;

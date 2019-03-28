@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1748751845}
   cd: {fileID: 1748751847}
-  toLevel: 4
+  toLevel: 
   temp: {fileID: 0}
   sleepSpot: 1
   roomChange: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1748751845}
   cd: {fileID: 1748751847}
-  toLevel: 2
+  toLevel: Living Room
   temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 1

@@ -510,10 +510,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cd: {fileID: 0}
-  toLevel: 2
+  toLevel: Living Room
   temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 0
+  roomChangeLocked: 0
   skillUnlock: 0
   wakeUp: 1
   skillSend: Backflip
