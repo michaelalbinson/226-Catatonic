@@ -79,5 +79,11 @@ public class Monk : MonoBehaviour
     void OnCollisionEnter2D(Collision2D target)
     {
         grounded = true;
+        Debug.Log(target.gameObject.name);
+        if (target.gameObject.name == "retina" || target.gameObject.name == "dude_4")
+        {
+
+            SceneManager.LoadScene("Jailbreak");
+        }
     }
 }
