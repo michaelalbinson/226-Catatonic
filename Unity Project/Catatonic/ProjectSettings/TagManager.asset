@@ -11,6 +11,7 @@ TagManager:
   - Cat Bone
   - Enemy
   - Dog Bone
+  - Win Spot
   layers:
   - Default
   - TransparentFX

@@ -7,10 +7,11 @@ public class PlatformGMScript : MonoBehaviour
 {
     public static bool dead = false;
 
+
 	// Start is called before the first frame update
     void Start()
     {
-        //hello
+
     }
 
     // Update is called once per frame
@@ -20,9 +21,17 @@ public class PlatformGMScript : MonoBehaviour
 			Death();
 			dead = false;
 		}
+
+		
     }
 
 	public void Death(){
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	void OnTriggerEnter2D(Collider2D cd){
+		if (cd.tag == "Player"){
+			LevelControl.gameFinish = true;
+		}
 	}
 }

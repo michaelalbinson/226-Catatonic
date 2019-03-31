@@ -3,17 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class Caged : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    public Transform explText;
+	// Update is called once per frame
+    
+	void Update()
     {
-        if (Input.GetKey("n"))
+        if (Input.GetKey("f"))
         {
             SceneManager.LoadScene("Jailbreak");
         }
 
-        if (Input.GetKey("l"))
-        {
-            SceneManager.LoadScene("Bathroom");
-        }
+		if (SkillTracker.getLockpick()){
+			if (Input.GetKey("l"))
+			{
+				 SceneManager.LoadScene("Bathroom");
+			}
+			explText.GetComponent<TextMesh>().text = "You have unlocked the ability to lockpick!\n Press 'l' to lockpick"; 
+        }		
+		
+
     }
 }

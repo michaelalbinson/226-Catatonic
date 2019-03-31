@@ -72,7 +72,7 @@ public class Monk : MonoBehaviour
 
         if (transform.position.x > 115)
         {
-            SceneManager.LoadScene("Caged");
+            LevelControl.gameFinish = true;
         }
     }
 

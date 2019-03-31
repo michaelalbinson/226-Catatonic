@@ -511,13 +511,15 @@ MonoBehaviour:
   player: {fileID: 0}
   cd: {fileID: 0}
   toLevel: Living Room
-  temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 0
   roomChangeLocked: 0
-  skillUnlock: 0
   wakeUp: 1
-  skillSend: Backflip
+  skillSend: Joke
+  textTriggeronStay: 0
+  textOnStay: 
+  roomLockText: 
+  explText: {fileID: 0}
 --- !u!61 &377253262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1592,7 +1594,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5.721227
-  m_Depth: -2
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

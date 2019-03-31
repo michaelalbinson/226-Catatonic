@@ -2128,13 +2128,15 @@ MonoBehaviour:
   player: {fileID: 0}
   cd: {fileID: 0}
   toLevel: Front Yard
-  temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 0
   roomChangeLocked: 0
-  skillUnlock: 0
   wakeUp: 1
-  skillSend: Backflip
+  skillSend: Reflex
+  textTriggeronStay: 0
+  textOnStay: 
+  roomLockText: 
+  explText: {fileID: 0}
 --- !u!4 &1914116777
 Transform:
   m_ObjectHideFlags: 0
@@ -2506,7 +2508,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.67825866, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -2523,7 +2525,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 4.093109
-  m_Depth: 1
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -264,13 +264,15 @@ MonoBehaviour:
   player: {fileID: 1161769575}
   cd: {fileID: 1161769577}
   toLevel: Word Minigame
-  temp: {fileID: 0}
   sleepSpot: 1
   roomChange: 0
   roomChangeLocked: 0
-  skillUnlock: 0
   wakeUp: 0
   skillSend: 
+  textTriggeronStay: 1
+  textOnStay: Press 'f' to enter a dream
+  roomLockText: 
+  explText: {fileID: 537968042}
 --- !u!61 &104397577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -388,13 +390,15 @@ MonoBehaviour:
   player: {fileID: 1161769575}
   cd: {fileID: 1161769577}
   toLevel: Front Yard
-  temp: {fileID: 0}
   sleepSpot: 0
   roomChange: 0
   roomChangeLocked: 1
-  skillUnlock: 0
   wakeUp: 0
   skillSend: 
+  textTriggeronStay: 1
+  textOnStay: Press 'p' to enter Front Yard area.
+  roomLockText: You must learn how to tell jokes before going to the Front Yard, haha!
+  explText: {fileID: 537968042}
 --- !u!61 &138787075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -448,7 +452,7 @@ GameObject:
   - component: {fileID: 498630799}
   - component: {fileID: 498630798}
   m_Layer: 0
-  m_Name: Bathroom Entrance
+  m_Name: Upstairs Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,14 +484,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1161769575}
   cd: {fileID: 1161769577}
-  toLevel: Bathroom
-  temp: {fileID: 0}
+  toLevel: Upstairs
   sleepSpot: 0
   roomChange: 1
   roomChangeLocked: 0
-  skillUnlock: 0
   wakeUp: 0
   skillSend: 
+  textTriggeronStay: 1
+  textOnStay: Press 'p' to go to the Upstairs area
+  roomLockText: 
+  explText: {fileID: 537968042}
 --- !u!61 &498630800
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -528,6 +534,118 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &537968038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537968042}
+  - component: {fileID: 537968041}
+  - component: {fileID: 537968040}
+  - component: {fileID: 537968039}
+  m_Layer: 0
+  m_Name: Explanatory Text (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &537968039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537968038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7353d0aedbc37094fa36a197ad6ec94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permanent: 1
+  twoStage: 0
+  enter: 32
+  stage1Line1: Is that a party you hear by the door?
+  stage1Line2: 
+  stage1Line3: 
+  stage2: 
+  textObject: {fileID: 537968042}
+--- !u!102 &537968040
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537968038}
+  m_Text: 
+  m_OffsetZ: 0
+  m_CharacterSize: 0.04
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 100
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+--- !u!23 &537968041
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537968038}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!4 &537968042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537968038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -32.42, y: -21.77, z: -0.09765625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025073741
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1025073742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -623,7 +741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1142699245
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1517556766
 AudioListener:
   m_ObjectHideFlags: 0
@@ -985,8 +1103,8 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.721227
-  m_Depth: -2
+  orthographic size: 6
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1009,7 +1127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969825830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.869999, y: -17.45, z: -10}
+  m_LocalPosition: {x: -23.02, y: -17.45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

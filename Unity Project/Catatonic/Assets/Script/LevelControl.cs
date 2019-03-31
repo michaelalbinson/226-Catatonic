@@ -11,31 +11,42 @@ public class LevelControl : MonoBehaviour
 	public Cat player;
 	public Collider2D cd;
 	public string toLevel;
-	public Text temp; //temp
 	public bool sleepSpot;
 	public bool roomChange;
 	public bool roomChangeLocked;
-	public bool skillUnlock;
+	//public bool skillUnlock;
 	public bool wakeUp;
 	public string skillSend;
 
-	IEnumerator Wait(){
-		
-		yield return new WaitForSecondsRealtime(5);
-		Debug.Log("Hello");
-	}
+	public bool textTriggeronStay;
+	public string textOnStay;
+	public string roomLockText;
+	public Transform explText;
+	private bool hitContextSensitive = false;
 
+
+	void OnTriggerExit2D(Collider2D other){
+		if (hitContextSensitive){
+			hitContextSensitive = false;
+			explText.GetComponent<TextMesh>().text = "";
+		}
+	}
 	void OnTriggerStay2D(Collider2D other){
 		//Debug.Log("Hello");
+		if (textTriggeronStay){
+			explText.GetComponent<TextMesh>().text = textOnStay;
+			hitContextSensitive = true;
+		}
+
 		if (other.gameObject.CompareTag("Player")){
 			
 			if (sleepSpot){
 				if (player.getAsleep()) {
-					StartCoroutine(Wait());
-					//FIX WAITING FOR REAL GAME
+				//if (Input.GetKey("f")){
 										
 					SceneManager.LoadScene(toLevel);
 				}
+				//}
 			}
 
 			else if (roomChange || roomChangeLocked) {
@@ -45,20 +56,23 @@ public class LevelControl : MonoBehaviour
 						SceneManager.LoadScene(toLevel);
 					}
 					else if (roomChangeLocked){
-						if (player.getUnlock("Front")){
+						if (SkillTracker.getRoomUnlock(toLevel)){
 							SceneManager.LoadScene(toLevel);
+						}
+						else{
+							explText.GetComponent<TextMesh>().text = string.Concat(textOnStay, '\n', roomLockText);
 						}
 					}
 				}
 			}
-
+			/*
 			else if (skillUnlock){
 				if (Input.GetKey("b")){
 					skillForwarder(skillSend);
 					temp.text = "Backflip unlocked";
 				}
 
-			}
+			}*/
 
 		}
 	}
@@ -69,7 +83,7 @@ public class LevelControl : MonoBehaviour
 	}
 	
 	void Start(){
-
+		gameFinish = false;
 	}
 
 	void Update(){
@@ -77,7 +91,6 @@ public class LevelControl : MonoBehaviour
 			if (gameFinish){
 				skillForwarder(skillSend);
 				SceneManager.LoadScene(toLevel);
-				Debug.Log(SkillTracker.getJoke());
 			}
 		}
 	}
