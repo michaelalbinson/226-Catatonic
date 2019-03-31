@@ -70,7 +70,7 @@ public class Monk : MonoBehaviour
             SceneManager.LoadScene("Jailbreak");
         }
 
-        if (transform.position.x > 100)
+        if (transform.position.x > 115)
         {
             SceneManager.LoadScene("Caged");
         }
