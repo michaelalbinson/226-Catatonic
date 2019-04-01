@@ -148,7 +148,7 @@ MonoBehaviour:
   enter: 32
   stage1Line1: Wait, you're a cat? Use 'arrow keys' or 'a' and 'd' to move.
   stage1Line2: Use 'space' to jump. Use 'f' to go to sleep and 'q' to wake up.
-  stage1Line3: Re-enter tis room to see these instructions again.
+  stage1Line3: Re-enter this room to see these instructions again.
   stage2: 
   textObject: {fileID: 60878448}
 --- !u!102 &60878446
@@ -620,6 +620,7 @@ MonoBehaviour:
   jumpForce: 300
   boundRight: 9
   boundLeft: -9
+  textArea: {fileID: 60878448}
 --- !u!1 &1134390867
 GameObject:
   m_ObjectHideFlags: 0

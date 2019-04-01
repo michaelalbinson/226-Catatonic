@@ -8,6 +8,11 @@ public class SkillTracker : MonoBehaviour
 	private static bool joke = false;
 	private static bool reflex = false;
 	private static bool lockpick = false;
+
+	//bools used to track if intro text for these have been given
+	public static bool introBackflip = true;
+	public static bool introJoke = true;
+	public static bool introReflex = true;
 		
 	public static void setUnlock(bool x, string item){
 		if (item == "Backflip"){

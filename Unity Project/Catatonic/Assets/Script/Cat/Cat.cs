@@ -19,14 +19,15 @@ public class Cat : MonoBehaviour
 	public float boundRight = 9.6f;
 	public float boundLeft = -9.6f;
 
-	//skill booleans
-	private static bool unlockBackflip = false;
-	private bool unlockFront = false;
+	public Transform textArea;
+
+	private
 
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -34,18 +35,59 @@ public class Cat : MonoBehaviour
     {
         Movement();
 		Skills();
-		unlockBackflip = SkillTracker.getBackflip();
-		if (unlockBackflip) {
+		IntrotoSkills();
+		//unlockBackflip = SkillTracker.getBackflip();
+		/*if (unlockBackflip) {
 			unlockFront = true;
-		}
+		}*/
     }
+
+	void IntrotoSkills(){
+		if (SkillTracker.introJoke){
+			if (SkillTracker.getJoke()){
+				textArea.GetComponent<TextMesh>().text = "You have unlocked the ability to tell jokes!\nYou will now be able to make others give you pity laughs while they slowly judge you\nPress 'j' to tell a joke";
+				SkillTracker.introJoke = false;
+			}
+		}
+		if (SkillTracker.introBackflip){
+			if (SkillTracker.getBackflip()){
+				textArea.GetComponent<TextMesh>().text = "You have unlocked the ability to backflip!\nHopefully you don't let your mad skills go to your head\nPress 'o' to backflip";
+				SkillTracker.introBackflip = false;
+			}
+		}
+		if (SkillTracker.introReflex){
+			if (SkillTracker.getReflex()){
+				textArea.GetComponent<TextMesh>().text = "You have unlocked cat reflexes...wait what?\nI guess the ability is kind of useless\nYou seem to be rad enough to enter the party now though";
+				SkillTracker.introReflex = false;
+			}
+		}
+	}
 
 	void Skills(){
 		if (Input.GetKey("o")){	
-			if (unlockBackflip && grounded) {
+			if (SkillTracker.getBackflip() && grounded) {
 				grounded = false;
 				myBody.AddForce(new Vector2(transform.position.x, jumpForce));
 				anim.SetBool("Backflip", true);
+			}
+		}
+		if (Input.GetKey("j")){
+			if (SkillTracker.getJoke()){
+				int randomNum = Random.Range(1,5);
+				string jokeString = "";
+				if (randomNum == 1){
+					jokeString = "What is my favourite food on a hot day?\nA mice-cream cone";
+				}
+				else if (randomNum == 2){
+					jokeString = "What is my favourite colour?\nPurr-ple";
+				}
+				else if (randomNum == 3){
+					jokeString = "Schrodinger's cat, uh?\nIt is very purr-plexing";
+				}
+				else {
+					jokeString = "Do you want me to pick you up anything?\nI'm going to the re-tail store";
+				}
+				textArea.GetComponent<TextMesh>().text = jokeString;
 			}
 		}
 	}
@@ -133,12 +175,13 @@ public class Cat : MonoBehaviour
 		return asleep;
 	}
 
+	/*
 	public bool getUnlock(string item){
 		if (item == "Front"){
 			return unlockFront;
 		}
 		return false;
-	}
+	}*/
 
 	/*
 	public void setUnlock(bool x, string item) {

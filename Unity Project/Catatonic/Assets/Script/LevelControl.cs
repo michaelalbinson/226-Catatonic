@@ -31,12 +31,17 @@ public class LevelControl : MonoBehaviour
 			explText.GetComponent<TextMesh>().text = "";
 		}
 	}
-	void OnTriggerStay2D(Collider2D other){
-		//Debug.Log("Hello");
+
+	void OnTriggerEnter2D(Collider2D other){
 		if (textTriggeronStay){
 			explText.GetComponent<TextMesh>().text = textOnStay;
 			hitContextSensitive = true;
 		}
+			
+	}
+	void OnTriggerStay2D(Collider2D other){
+		//Debug.Log("Hello");
+
 
 		if (other.gameObject.CompareTag("Player")){
 			
