@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Dog Bone
   - Win Spot
+  - sight
   layers:
   - Default
   - TransparentFX

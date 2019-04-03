@@ -9,8 +9,10 @@ public class Monk : MonoBehaviour
     private Animator anim;
 
     public float speed;
-    public float jumpForce;
-    private bool grounded = true;
+    public float standardJumpForce;
+	public float adjustedJumpForce;
+	private float jumpForce;
+    private bool grounded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class Monk : MonoBehaviour
     { 
         Movement();
         IsInValidSpace();
+		FixJump();
     }
 
 	void Movement(){
@@ -79,10 +82,18 @@ public class Monk : MonoBehaviour
     void OnCollisionEnter2D(Collision2D target)
     {
         grounded = true;
+		jumpForce = standardJumpForce;
         if (target.gameObject.name == "retina" || target.gameObject.name == "dude_4")
         {
 
             SceneManager.LoadScene("Jailbreak");
         }
     }
+
+	void FixJump(){
+		if (myBody.velocity == new Vector2(0f,0f)){
+			grounded = true;
+			jumpForce = adjustedJumpForce;
+		}
+	}
 }

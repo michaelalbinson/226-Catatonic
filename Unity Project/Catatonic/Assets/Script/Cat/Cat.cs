@@ -36,6 +36,7 @@ public class Cat : MonoBehaviour
         Movement();
 		Skills();
 		IntrotoSkills();
+		//Debug.Log(transform.position.x);
 		//unlockBackflip = SkillTracker.getBackflip();
 		/*if (unlockBackflip) {
 			unlockFront = true;
@@ -57,7 +58,7 @@ public class Cat : MonoBehaviour
 		}
 		if (SkillTracker.introReflex){
 			if (SkillTracker.getReflex()){
-				textArea.GetComponent<TextMesh>().text = "You have unlocked cat reflexes...wait what?\nI guess the ability is kind of useless\nYou seem to be rad enough to enter the party now though";
+				textArea.GetComponent<TextMesh>().text = "You have unlocked cat reflexes...wait what?\nI guess the ability is kind of useless, since you're already a cat...\nYou seem to be rad enough to enter the party now though";
 				SkillTracker.introReflex = false;
 			}
 		}
