@@ -41,7 +41,7 @@ public class LevelControl : MonoBehaviour
 	}
 	void OnTriggerStay2D(Collider2D other){
 		//Debug.Log("Hello");
-
+		//Debug.Log("Hello");
 
 		if (other.gameObject.CompareTag("Player")){
 			

@@ -10,7 +10,7 @@ public class Monk : MonoBehaviour
 
     public float speed;
     public float standardJumpForce;
-	public float adjustedJumpForce;
+	//public float adjustedJumpForce;
 	private float jumpForce;
     private bool grounded = false;
 
@@ -26,7 +26,7 @@ public class Monk : MonoBehaviour
     { 
         Movement();
         IsInValidSpace();
-		FixJump();
+		//FixJump();
     }
 
 	void Movement(){
@@ -89,11 +89,11 @@ public class Monk : MonoBehaviour
             SceneManager.LoadScene("Jailbreak");
         }
     }
-
+	/*
 	void FixJump(){
 		if (myBody.velocity == new Vector2(0f,0f)){
 			grounded = true;
-			jumpForce = adjustedJumpForce;
+			//jumpForce = adjustedJumpForce;
 		}
-	}
+	}*/
 }
